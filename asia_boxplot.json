@@ -1,0 +1,27 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+
+  "data": {
+  "url": "https://raw.githubusercontent.com/TitaniumDuck/dsp_hmwk_csv/refs/heads/main/DSP_HMWK_04_DATA.csv",
+  "format": {"type": "csv"}},
+  
+  "title":
+  {
+    "text": "Asain GDP Per Capita",
+    "anchor": "middle",
+    "fontSize": 16
+  }, 
+
+  "mark": "boxplot",
+
+  "transform": 
+  [
+    {"filter": "datum.inAsia == 1"}
+  ],
+
+  "encoding": 
+  {
+    "x": {"field": "Continent", "type": "nominal"},
+    "y": {"field": "GDP per Capita", "type": "quantitative"}
+  }
+}
