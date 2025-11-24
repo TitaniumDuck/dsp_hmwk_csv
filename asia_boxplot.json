@@ -7,7 +7,7 @@
   
   "title":
   {
-    "text": "Asain GDP Per Capita",
+    "text": "Asain GDP Per Capita (x 1,000,000)",
     "anchor": "middle",
     "fontSize": 16
   }, 
@@ -16,12 +16,14 @@
 
   "transform": 
   [
-    {"filter": "datum.inAsia == 1"}
+    {"filter": "datum.inAsia == 1"},
+    {"calculate": "datum['GDP per Capita'] * 1000000",
+    "as": "GDP_SCALED"}
   ],
 
   "encoding": 
   {
     "x": {"field": "Continent", "type": "nominal"},
-    "y": {"field": "GDP per Capita", "type": "quantitative"}
+    "y": {"field": "GDP_SCALED", "type": "quantitative"}
   }
 }
